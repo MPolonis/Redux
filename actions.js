@@ -10,7 +10,8 @@ const addComment = text => {
     return {
         type: ADD_COMMENT,
         text,
-        id: uuid.v4()
+        id: uuid.v4(),
+        votes: 0
     }
 };
 
@@ -33,7 +34,7 @@ const thumbUpComment = id => {
     return {
         type: THUMB_UP_COMMENT,
         id,
-        votes: vote++
+        votes: votes++
     }
 }
 
@@ -41,6 +42,6 @@ const thumbDownComment = id => {
     return {
         type: THUMB_DOWN_COMMENT,
         id,
-        votes: vote--
+        votes: votes--
     }
 }
